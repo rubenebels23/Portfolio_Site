@@ -1,18 +1,17 @@
-import Navbar from "./components/Navbar";
+// src/App.jsx
 import Hero from "./components/Hero";
 import Projects from "./pages/Projects";
-import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
 import "./index.css";
 
 export default function App() {
   return (
-    <div className="font-sans bg-gradient-to-br from-purple-900 via-purple-700 to-black text-white">
+    <div className="font-sans scroll-smooth bg-white text-black dark:bg-slate-900 dark:text-white transition-colors duration-500">
       <Navbar />
       <Hero />
       <Projects />
-      <About />
       <Contact />
       <Footer />
     </div>

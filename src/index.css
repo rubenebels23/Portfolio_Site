@@ -1,3 +1,36 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .animate-fadeIn {
+    animation: fadeIn 1s ease-in-out both;
+  }
+  .animate-glow {
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* Optional: Smooth scrollbar styling */
+body::-webkit-scrollbar {
+  width: 10px;
+}
+body::-webkit-scrollbar-thumb {
+  background: #7c3aed;
+  border-radius: 10px;
+}
+body::-webkit-scrollbar-track {
+  background: #1f1f1f;
+}
+

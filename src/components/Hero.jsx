@@ -1,15 +1,53 @@
+// src/components/Hero.jsx
+import { motion } from "framer-motion";
+import { FaGithub, FaLinkedin, FaEnvelope, FaReact, FaCss3Alt, FaHtml5 } from "react-icons/fa";
+
 export default function Hero() {
   return (
-    <section className="flex flex-col justify-center items-center text-center min-h-[80vh] px-4">
-      <h2 className="text-5xl font-extrabold bg-gradient-to-r from-purple-300 via-white to-purple-400 bg-clip-text text-transparent mb-4">
-        Hi, I'm Alex
-      </h2>
-      <p className="text-xl text-purple-100 mb-6">
-        Frontend Developer & Designer building magical UIs
+    <motion.section
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1 }}
+      className="min-h-screen flex flex-col justify-center items-center text-center px-6 bg-gradient-to-br from-slate-900 via-slate-800 to-black text-white relative overflow-hidden"
+    >
+      <div className="absolute w-[600px] h-[600px] bg-sky-500/10 rounded-full blur-[200px] animate-pulse"></div>
+
+  
+      <h1 className="text-5xl sm:text-6xl font-extrabold bg-gradient-to-r from-sky-400 via-sky-500 to-blue-600 bg-clip-text text-transparent drop-shadow-lg mb-4">
+        Hello, I'm Ruben!
+      </h1>
+
+      <p className="text-lg sm:text-xl text-slate-300 max-w-xl mb-8 z-10">
+        I am a first year student at the University of Groningen, specializing in game development. I like creating immersive experiences using Unity and C#.
       </p>
-      <a href="#projects" className="px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-full shadow-lg text-lg font-semibold">
-        View My Work
-      </a>
-    </section>
+
+      <div className="flex flex-wrap justify-center gap-4 mb-6 z-10">
+        <a
+          href="#projects"
+          className="bg-sky-600 hover:bg-sky-700 text-white px-6 py-3 rounded-full shadow-lg hover:scale-105 transition duration-300"
+        >
+          🚀 View Projects
+        </a>
+        <a
+          href="#contact"
+          className="bg-slate-700 hover:bg-slate-800 text-white px-6 py-3 rounded-full shadow-lg hover:scale-105 transition duration-300"
+        >
+          ✉️ Contact Me
+        </a>
+      </div>
+
+      <div className="flex gap-6 text-2xl mb-8 z-10">
+        <a href="https://github.com/" target="_blank" className="hover:text-sky-400"><FaGithub /></a>
+        <a href="https://linkedin.com/" target="_blank" className="hover:text-sky-400"><FaLinkedin /></a>
+        <a href="mailto:ruben@example.com" className="hover:text-sky-400"><FaEnvelope /></a>
+      </div>
+
+      <div className="flex gap-8 text-4xl text-sky-400 opacity-70 z-10">
+        <FaReact className="hover:scale-110 transition-transform" />
+        <FaHtml5 className="hover:scale-110 transition-transform" />
+        <FaCss3Alt className="hover:scale-110 transition-transform" />
+      </div>
+
+    </motion.section>
   );
 }
