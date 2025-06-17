@@ -1,7 +1,4 @@
-// src/pages/Projects.jsx
-
 import { motion } from "framer-motion";
-
 
 export default function Projects() {
   return (
@@ -16,22 +13,34 @@ export default function Projects() {
         <h2 className="text-4xl font-bold mb-10">🚀 Projects</h2>
 
         <div className="grid md:grid-cols-2 gap-8">
-          <div className="bg-slate-700 rounded-xl p-6 shadow-lg hover:scale-105 transition-transform">
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            className="bg-slate-700 rounded-xl p-6 shadow-lg transition-transform"
+          >
             <h3 className="text-2xl font-semibold mb-2">Cool App</h3>
             <p className="text-slate-300">A project using React and TailwindCSS with animations and dark mode.</p>
-          </div>
-          <div className="bg-slate-700 rounded-xl p-6 shadow-lg hover:scale-105 transition-transform">
+          </motion.div>
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            className="bg-slate-700 rounded-xl p-6 shadow-lg transition-transform"
+          >
             <h3 className="text-2xl font-semibold mb-2">Magic Website</h3>
             <p className="text-slate-300">My personal blog & portfolio built with React and Vite.</p>
-          </div>
-                    <div className="bg-slate-700 rounded-xl p-6 shadow-lg hover:scale-105 transition-transform">
+          </motion.div>
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            className="bg-slate-700 rounded-xl p-6 shadow-lg transition-transform"
+          >
             <h3 className="text-2xl font-semibold mb-2">Magic Website</h3>
             <p className="text-slate-300">My personal blog & portfolio built with React and Vite.</p>
-          </div>
-                    <div className="bg-slate-700 rounded-xl p-6 shadow-lg hover:scale-105 transition-transform">
+          </motion.div>
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            className="bg-slate-700 rounded-xl p-6 shadow-lg transition-transform"
+          >
             <h3 className="text-2xl font-semibold mb-2">Magic Website</h3>
             <p className="text-slate-300">My personal blog & portfolio built with React and Vite.</p>
-          </div>
+          </motion.div>
         </div>
       </div>
     </motion.section>

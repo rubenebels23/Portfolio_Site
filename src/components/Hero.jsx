@@ -5,10 +5,10 @@ import { FaGithub, FaLinkedin, FaEnvelope, FaReact, FaCss3Alt, FaHtml5 } from "r
 export default function Hero() {
   return (
     <motion.section
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1 }}
-      className="min-h-screen flex flex-col justify-center items-center text-center px-6 bg-gradient-to-br from-slate-900 via-slate-800 to-black text-white relative overflow-hidden"
+  initial={{ opacity: 0, y: 50 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 1 }}
+  className="min-h-[110vh] flex flex-col justify-center items-center text-center px-6 bg-gradient-to-br from-slate-900 via-slate-800 to-black text-white relative overflow-hidden"
     >
       <div className="absolute w-[600px] h-[600px] bg-sky-500/10 rounded-full blur-[200px] animate-pulse"></div>
 
@@ -22,19 +22,23 @@ export default function Hero() {
       </p>
 
       <div className="flex flex-wrap justify-center gap-4 mb-6 z-10">
-        <a
-          href="#projects"
-          className="bg-sky-600 hover:bg-sky-700 text-white px-6 py-3 rounded-full shadow-lg hover:scale-105 transition duration-300"
-        >
-          🚀 View Projects
-        </a>
-        <a
-          href="#contact"
-          className="bg-slate-700 hover:bg-slate-800 text-white px-6 py-3 rounded-full shadow-lg hover:scale-105 transition duration-300"
-        >
-          ✉️ Contact Me
-        </a>
-      </div>
+  <button
+    onClick={() => {
+      document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" , block: "center"});
+    }}
+    className="bg-sky-600 hover:bg-sky-700 text-white px-6 py-3 rounded-full shadow-lg hover:scale-105 transition duration-300"
+  >
+    🚀 View Projects
+  </button>
+  <button
+    onClick={() => {
+      document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" , block: "center"});
+    }}
+    className="bg-slate-700 hover:bg-slate-800 text-white px-6 py-3 rounded-full shadow-lg hover:scale-105 transition duration-300"
+  >
+    ✉️ Contact Me
+  </button>
+</div>
 
       <div className="flex gap-6 text-2xl mb-8 z-10">
         <a href="https://github.com/" target="_blank" className="hover:text-sky-400"><FaGithub /></a>
