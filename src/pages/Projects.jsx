@@ -7,7 +7,7 @@ import horrorTextGame from "../assets/horrorquestions.png";
 import textAdventureGame from "../assets/Sewers.png";
 
 // Optional: abstract into ProjectCard.jsx
-const ProjectCard = ({ title, image, description, github, zip }) => (
+const ProjectCard = ({ title, image, description, github, zip, video }) => (
   <motion.div
     whileHover={{ scale: 1.05 }}
     className="bg-slate-700 rounded-2xl p-4 shadow-lg transition-transform space-y-4"
@@ -39,6 +39,16 @@ const ProjectCard = ({ title, image, description, github, zip }) => (
           Download ZIP
         </a>
       )}
+      {video && (
+        <a
+          href={video}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-sky-400 hover:underline"
+        >
+          Watch Video
+        </a>
+      )}
     </div>
   </motion.div>
 );
@@ -62,13 +72,15 @@ export default function Projects() {
             description="A 2D pixel shooter built in HTML, CSS, and JavaScript."
             github="https://github.com/yourusername/asian-ape-hunt"
             zip="/projects/asian-ape-hunt.zip"
+            video="https://www.youtube.com/watch?v=example"
           />
           <ProjectCard
             title="Refund4Life"
             image={refund4Life}
             description="A simulated refund site where you can buy a game and refund it anytime for free!"
-            github="https://github.com/yourusername/refund4life"
+            github="https://github.com/rubenebels23/Keuzedeel_FrontEnd"
             zip="/projects/refund4life.zip"
+            video="https://www.youtube.com/watch?v=example"
           />
           <ProjectCard
             title="Horror Text Game"
@@ -76,13 +88,15 @@ export default function Projects() {
             description="A horror-style decision game built using vanilla JS."
             github="https://github.com/yourusername/horror-text-game"
             zip="/projects/horror-text-game.zip"
+            video="https://www.youtube.com/watch?v=example"
           />
           <ProjectCard
             title="Text Adventure Game"
             image={textAdventureGame}
             description="'The Sewers' is a text-based adventure game where you explore a mysterious underground world."
-            github="https://github.com/yourusername/text-adventure"
+            github="https://github.com/rubenebels23/Text_Adventure"
             zip="/projects/text-adventure.zip"
+            video="https://www.youtube.com/watch?v=example"
           />
         </div>
       </div>

@@ -6,7 +6,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="top-0 left-0 w-full z-50 bg-black bg-opacity-91 backdrop-blur text-white shadow-lg">
+    <header className="fixed top-0 left-0 w-full z-50 bg-black bg-opacity-91 backdrop-blur text-white shadow-lg">
       <nav className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         {/* <div className="text-2xl font-bold text-sky-400">Refund4Life</div> */}
 

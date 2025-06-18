@@ -41,9 +41,9 @@ export default function Hero() {
 </div>
 
       <div className="flex gap-6 text-2xl mb-8 z-10">
-        <a href="https://github.com/" target="_blank" className="hover:text-sky-400"><FaGithub /></a>
-        <a href="https://linkedin.com/" target="_blank" className="hover:text-sky-400"><FaLinkedin /></a>
-        <a href="mailto:ruben@example.com" className="hover:text-sky-400"><FaEnvelope /></a>
+        <a href="https://github.com/rubenebels23" target="_blank" className="hover:text-sky-400"><FaGithub /></a>
+        <a href="https://linkedin.com/in/rubenebels" target="_blank" className="hover:text-sky-400"><FaLinkedin /></a>
+        <a href="mailto:rubenebels2006@gmail.com" className="hover:text-sky-400"><FaEnvelope /></a>
       </div>
 
       <div className="flex gap-8 text-4xl text-sky-400 opacity-70 z-10">

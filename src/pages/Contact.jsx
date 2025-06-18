@@ -1,4 +1,3 @@
-// src/pages/Contact.jsx
 import { motion } from "framer-motion";
 
 export default function Contact() {
@@ -14,27 +13,35 @@ export default function Contact() {
         <h2 className="text-4xl font-bold mb-10">📬 Contact</h2>
         <p className="text-slate-300 mb-8">Interested in working together? Fill out the form below.</p>
 
-        <form className="space-y-4">
-          <input
-            type="text"
-            placeholder="Your Name"
-            className="w-full p-3 rounded-lg bg-neutral-800 text-white placeholder-slate-400 focus:outline-none"
-          />
-          <input
-            type="email"
-            placeholder="Email"
-            className="w-full p-3 rounded-lg bg-neutral-800 text-white placeholder-slate-400 focus:outline-none"
-          />
-          <textarea
-            rows="4"
-            placeholder="Message"
-            className="w-full p-3 rounded-lg bg-neutral-800 text-white placeholder-slate-400 focus:outline-none"
-          />
+        <form
+          action="https://formspree.io/f/xanjbben"
+          method="POST"
+          className="space-y-4"
+        >
+          <label className="block text-left text-slate-200">
+            Your email:
+            <input
+              type="email"
+              name="email"
+              required
+              className="w-full mt-1 p-3 rounded-lg bg-neutral-800 text-white placeholder-slate-400 focus:outline-none"
+            />
+          </label>
+          <label className="block text-left text-slate-200">
+            Your message:
+            <textarea
+              name="message"
+              required
+              rows="4"
+              className="w-full mt-1 p-3 rounded-lg bg-neutral-800 text-white placeholder-slate-400 focus:outline-none"
+            />
+          </label>
+          {/* You can add more fields here if needed */}
           <button
             type="submit"
             className="bg-sky-600 hover:bg-sky-700 text-white px-6 py-3 rounded-full shadow-lg transition"
           >
-            Send Message
+            Send
           </button>
         </form>
       </div>

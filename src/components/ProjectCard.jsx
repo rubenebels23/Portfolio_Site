@@ -1,5 +1,5 @@
 // src/components/ProjectCard.jsx
-export default function ProjectCard({ title, image, description, github, zip }) {
+export default function ProjectCard({ title, image, description, github, zip, video }) {
   return (
     <div className="bg-slate-800 rounded-2xl shadow-lg p-4 space-y-4 hover:shadow-2xl transition">
       <img
@@ -27,6 +27,17 @@ export default function ProjectCard({ title, image, description, github, zip }) 
             className="text-sky-400 hover:underline"
           >
             Download ZIP
+          </a>
+        )}
+
+        {video && (
+          <a
+            href={video}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sky-400 hover:underline"
+          >
+            Watch Video
           </a>
         )}
       </div>
