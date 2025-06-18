@@ -1,6 +1,6 @@
 // src/components/Hero.jsx
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin, FaEnvelope, FaReact, FaCss3Alt, FaHtml5 } from "react-icons/fa";
+import { FaGithub, FaEnvelope, FaReact, FaCss3Alt, FaHtml5, FaInstagram } from "react-icons/fa";
 
 export default function Hero() {
   return (
@@ -18,7 +18,7 @@ export default function Hero() {
       </h1>
 
       <p className="text-lg sm:text-xl text-slate-300 max-w-xl mb-8 z-10">
-        I am a first year student at the University of Groningen, specializing in game development. I like creating immersive experiences using Unity and C#.
+        I am a first year student at Alfa-College in Groningen specializing in game development. I like creating immersive experiences using Unity and C#.
       </p>
 
       <div className="flex flex-wrap justify-center gap-4 mb-6 z-10">
@@ -42,8 +42,8 @@ export default function Hero() {
 
       <div className="flex gap-6 text-2xl mb-8 z-10">
         <a href="https://github.com/rubenebels23" target="_blank" className="hover:text-sky-400"><FaGithub /></a>
-        <a href="https://linkedin.com/in/rubenebels" target="_blank" className="hover:text-sky-400"><FaLinkedin /></a>
-        <a href="mailto:rubenebels2006@gmail.com" className="hover:text-sky-400"><FaEnvelope /></a>
+        <a href="https://www.instagram.com/rubenebels/?next=%2F00" target="_blank" className="hover:text-sky-400"><FaInstagram /></a>
+        <a href="#contact" className="hover:text-sky-400"><FaEnvelope /></a>
       </div>
 
       <div className="flex gap-8 text-4xl text-sky-400 opacity-70 z-10">
