@@ -1,5 +1,48 @@
 import { motion } from "framer-motion";
 
+// ✅ Importing images from src/assets
+import asianApeHunt from "../assets/chinese.png";
+import refund4Life from "../assets/R4L.png";
+import horrorTextGame from "../assets/horrorquestions.png";
+import textAdventureGame from "../assets/Sewers.png";
+
+// Optional: abstract into ProjectCard.jsx
+const ProjectCard = ({ title, image, description, github, zip }) => (
+  <motion.div
+    whileHover={{ scale: 1.05 }}
+    className="bg-slate-700 rounded-2xl p-4 shadow-lg transition-transform space-y-4"
+  >
+    <img
+      src={image}
+      alt={`${title} screenshot`}
+      className="rounded-xl object-cover w-full h-48"
+    />
+    <h3 className="text-2xl font-semibold">{title}</h3>
+    <p className="text-slate-300 text-sm">{description}</p>
+    <div className="flex space-x-4 pt-2">
+      {github && (
+        <a
+          href={github}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-sky-400 hover:underline"
+        >
+          GitHub
+        </a>
+      )}
+      {zip && (
+        <a
+          href={zip}
+          download
+          className="text-sky-400 hover:underline"
+        >
+          Download ZIP
+        </a>
+      )}
+    </div>
+  </motion.div>
+);
+
 export default function Projects() {
   return (
     <motion.section
@@ -13,34 +56,34 @@ export default function Projects() {
         <h2 className="text-4xl font-bold mb-10">🚀 Projects</h2>
 
         <div className="grid md:grid-cols-2 gap-8">
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="bg-slate-700 rounded-xl p-6 shadow-lg transition-transform"
-          >
-            <h3 className="text-2xl font-semibold mb-2">Cool App</h3>
-            <p className="text-slate-300">A project using React and TailwindCSS with animations and dark mode.</p>
-          </motion.div>
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="bg-slate-700 rounded-xl p-6 shadow-lg transition-transform"
-          >
-            <h3 className="text-2xl font-semibold mb-2">Magic Website</h3>
-            <p className="text-slate-300">My personal blog & portfolio built with React and Vite.</p>
-          </motion.div>
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="bg-slate-700 rounded-xl p-6 shadow-lg transition-transform"
-          >
-            <h3 className="text-2xl font-semibold mb-2">Magic Website</h3>
-            <p className="text-slate-300">My personal blog & portfolio built with React and Vite.</p>
-          </motion.div>
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="bg-slate-700 rounded-xl p-6 shadow-lg transition-transform"
-          >
-            <h3 className="text-2xl font-semibold mb-2">Magic Website</h3>
-            <p className="text-slate-300">My personal blog & portfolio built with React and Vite.</p>
-          </motion.div>
+          <ProjectCard
+            title="Asian Ape Hunt"
+            image={asianApeHunt}
+            description="A 2D pixel shooter built in HTML, CSS, and JavaScript."
+            github="https://github.com/yourusername/asian-ape-hunt"
+            zip="/projects/asian-ape-hunt.zip"
+          />
+          <ProjectCard
+            title="Refund4Life"
+            image={refund4Life}
+            description="A simulated refund site where you can buy a game and refund it anytime for free!"
+            github="https://github.com/yourusername/refund4life"
+            zip="/projects/refund4life.zip"
+          />
+          <ProjectCard
+            title="Horror Text Game"
+            image={horrorTextGame}
+            description="A horror-style decision game built using vanilla JS."
+            github="https://github.com/yourusername/horror-text-game"
+            zip="/projects/horror-text-game.zip"
+          />
+          <ProjectCard
+            title="Text Adventure Game"
+            image={textAdventureGame}
+            description="'The Sewers' is a text-based adventure game where you explore a mysterious underground world."
+            github="https://github.com/yourusername/text-adventure"
+            zip="/projects/text-adventure.zip"
+          />
         </div>
       </div>
     </motion.section>
