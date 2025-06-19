@@ -1,20 +1,32 @@
-// src/components/Navbar.jsx
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
-  return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-black bg-opacity-91 backdrop-blur text-white shadow-lg">
-      <nav className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        {/* <div className="text-2xl font-bold text-sky-400">Refund4Life</div> */}
+  const handleSmoothScroll = (id) => {
+    setIsOpen(false);
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  };
 
+  return (
+    <header className="fixed top-0 left-0 w-full z-50 bg-transparent backdrop-blur-md text-white">
+      <nav className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-8 font-medium">
-          <li><a href="#hero" className="hover:text-sky-300 transition">Home</a></li>
-          <li><a href="#projects" className="hover:text-sky-300 transition">Projects</a></li>
-          <li><a href="#contact" className="hover:text-sky-300 transition">Contact</a></li>
+          {["home", "projects", "contact"].map((section) => (
+            <li key={section}>
+              <button
+                onClick={() => handleSmoothScroll(section)}
+                className="px-4 py-2 rounded-md hover:bg-white/10 transition backdrop-blur-sm hover:text-sky-300 text-white border border-transparent hover:border-sky-300"
+              >
+                {section.charAt(0).toUpperCase() + section.slice(1)}
+              </button>
+            </li>
+          ))}
         </ul>
 
         {/* Hamburger Icon */}
@@ -26,11 +38,22 @@ export default function Navbar() {
       </nav>
 
       {/* Mobile Menu */}
-      <div className={`${isOpen ? "block" : "hidden"} md:hidden bg-black bg-opacity-80 px-6 pb-6`}>
+      <div
+        className={`${
+          isOpen ? "block" : "hidden"
+        } md:hidden bg-black bg-opacity-80 px-6 pb-6`}
+      >
         <ul className="flex flex-col space-y-4 font-medium">
-          <li><a href="#hero" className="hover:text-sky-300 transition" onClick={() => setIsOpen(false)}>Home</a></li>
-          <li><a href="#projects" className="hover:text-sky-300 transition" onClick={() => setIsOpen(false)}>Projects</a></li>
-          <li><a href="#contact" className="hover:text-sky-300 transition" onClick={() => setIsOpen(false)}>Contact</a></li>
+          {["hero", "projects", "contact"].map((section) => (
+            <li key={section}>
+              <button
+                onClick={() => handleSmoothScroll(section)}
+                className="hover:text-sky-300 transition bg-transparent border-none outline-none cursor-pointer w-full text-left"
+              >
+                {section.charAt(0).toUpperCase() + section.slice(1)}
+              </button>
+            </li>
+          ))}
         </ul>
       </div>
     </header>

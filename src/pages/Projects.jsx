@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
 
 // ✅ Importing images from src/assets
-import asianApeHunt from "../assets/chinese.png";
-import refund4Life from "../assets/R4L.png";
-import horrorTextGame from "../assets/horrorquestions.png";
-import textAdventureGame from "../assets/Sewers.png";
+import asianApeHunt from "../assets/chinese.WebP";
+import refund4Life from "../assets/R4L.WebP";
+import horrorTextGame from "../assets/horrorquestions.WebP";
+import textAdventureGame from "../assets/Sewers.WebP";
+// import AnimatedSection from "./AnimatedSection";
 
 // Optional: abstract into ProjectCard.jsx
 const ProjectCard = ({ title, image, description, github, zip, video }) => (
@@ -12,11 +13,13 @@ const ProjectCard = ({ title, image, description, github, zip, video }) => (
     whileHover={{ scale: 1.05 }}
     className="bg-slate-700 rounded-2xl p-4 shadow-lg transition-transform space-y-4"
   >
-    <img
-      src={image}
-      alt={`${title} screenshot`}
-      className="rounded-xl object-cover w-full h-48"
-    />
+   <img
+  src={image}
+  alt={`${title} screenshot`}
+  loading="lazy"         // ✅ this is the new part!
+  className="rounded-xl object-cover w-full h-48"
+/>
+
     <h3 className="text-2xl font-semibold">{title}</h3>
     <p className="text-slate-300 text-sm">{description}</p>
     <div className="flex space-x-4 pt-2">
@@ -71,7 +74,7 @@ export default function Projects() {
             image={asianApeHunt}
             description="A 2D pixel shooter built in HTML, CSS, and JavaScript."
             github="https://github.com/yourusername/asian-ape-hunt"
-            zip="/projects/asian-ape-hunt.zip"
+            // zip="/projects/asian-ape-hunt.zip"
             video="https://www.youtube.com/watch?v=example"
           />
           <ProjectCard
@@ -79,7 +82,7 @@ export default function Projects() {
             image={refund4Life}
             description="A simulated refund site where you can buy a game and refund it anytime for free!"
             github="https://github.com/rubenebels23/Keuzedeel_FrontEnd"
-            zip="/projects/refund4life.zip"
+            // zip="/projects/refund4life.zip"
             video="https://www.youtube.com/watch?v=example"
           />
           <ProjectCard
@@ -87,7 +90,7 @@ export default function Projects() {
             image={horrorTextGame}
             description="A horror-style decision game built using vanilla JS."
             github="https://github.com/yourusername/horror-text-game"
-            zip="/projects/horror-text-game.zip"
+            // zip="/projects/horror-text-game.zip"
             video="https://www.youtube.com/watch?v=example"
           />
           <ProjectCard
@@ -95,7 +98,7 @@ export default function Projects() {
             image={textAdventureGame}
             description="'The Sewers' is a text-based adventure game where you explore a mysterious underground world."
             github="https://github.com/rubenebels23/Text_Adventure"
-            zip="/projects/text-adventure.zip"
+            // zip="/projects/text-adventure.zip"
             video="https://www.youtube.com/watch?v=example"
           />
         </div>
