@@ -1,8 +1,12 @@
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
+import useSoundEffect from "../hooks/useSoundEffect"; // 👈 import hook
+import clickSound from "../assets/sounds/click.mp3";  // 👈 import sound
+
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const playClick = useSoundEffect(clickSound); // 👈 initialize sound
 
   const handleSmoothScroll = (id) => {
     setIsOpen(false);
@@ -20,6 +24,7 @@ export default function Navbar() {
           {["home", "projects", "contact"].map((section) => (
             <li key={section}>
               <button
+                onMouseDown={playClick} // 👈 play sound on click
                 onClick={() => handleSmoothScroll(section)}
                 className="px-4 py-2 rounded-md hover:bg-white/10 transition backdrop-blur-sm hover:text-sky-300 text-white border border-transparent hover:border-sky-300"
               >
@@ -47,6 +52,7 @@ export default function Navbar() {
           {["hero", "projects", "contact"].map((section) => (
             <li key={section}>
               <button
+                onMouseDown={playClick} // 👈 play sound on click
                 onClick={() => handleSmoothScroll(section)}
                 className="hover:text-sky-300 transition bg-transparent border-none outline-none cursor-pointer w-full text-left"
               >

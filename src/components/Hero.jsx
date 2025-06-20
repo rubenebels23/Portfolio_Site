@@ -1,9 +1,12 @@
-// src/components/Hero.jsx
 import { motion } from "framer-motion";
 import { FaGithub, FaEnvelope, FaReact, FaCss3Alt, FaHtml5, FaInstagram } from "react-icons/fa";
 import AnimatedSection from "./AnimatedSection";
+import useSoundEffect from "../hooks/useSoundEffect"; // 👈 import hook
+import clickSound from "../assets/sounds/click.mp3";  // 👈 import sound
 
 export default function Hero() {
+  const playClick = useSoundEffect(clickSound); // 👈 initialize sound
+
   return (
     <AnimatedSection delay={0.1}>
       <motion.section
@@ -26,6 +29,7 @@ export default function Hero() {
         <div className="flex flex-wrap justify-center gap-4 mb-6 z-10">
           <button
             onClick={() => {
+              playClick(); // 👈 play sound
               document.getElementById("projects")?.scrollIntoView({ behavior: "smooth", block: "center" });
             }}
             className="bg-sky-600 hover:bg-sky-700 text-white px-6 py-3 rounded-full shadow-lg hover:scale-105 transition duration-300"
@@ -34,6 +38,7 @@ export default function Hero() {
           </button>
           <button
             onClick={() => {
+              playClick(); // 👈 play sound
               document.getElementById("contact")?.scrollIntoView({ behavior: "smooth", block: "center" });
             }}
             className="bg-slate-700 hover:bg-slate-800 text-white px-6 py-3 rounded-full shadow-lg hover:scale-105 transition duration-300"
